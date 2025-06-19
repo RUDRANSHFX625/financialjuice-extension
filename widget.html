@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FinancialJuice Widget</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #1e222d;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <div id="financialjuice-news-widget-container"></div>
+
+  <script>
+    const jo = document.createElement("script");
+    jo.type = "text/javascript";
+    jo.id = "FJ-Widgets";
+    jo.src = "https://feed.financialjuice.com/widgets/widgets.js?r=" + Math.floor(Math.random() * 10000);
+    jo.onload = function () {
+      const options = {
+        container: "financialjuice-news-widget-container",
+        mode: "Light",
+        width: "350px",
+        height: "500px",
+        backColor: "1e222d",
+        fontColor: "b2b5be",
+        widgetType: "NEWS"
+      };
+      new window.FJWidgets.createWidget(options);
+    };
+    document.head.appendChild(jo);
+  </script>
+</body>
+</html>
